@@ -6,6 +6,7 @@
 
 
 
+
 // random string generator wrapper function
 char* rand_string_alloc(size_t size)
 {
