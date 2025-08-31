@@ -1,11 +1,11 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-
-char randchar();
-
-//Description: return a random capital letter from the alphabet
-char randchar() {
-    char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    return alphabet[rand()%26];
+//Defining the rand_string function 
+void rand_string(char *s, size_t size) {
+    //Just using an array of lower and upper case letters to have the random string be pulled from
+    static const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (size_t i = 0; i < size; i++) {
+        int key = rand() % (sizeof(charset) - 1);
+        s[i] = charset[key];
+    }
+    s[size] = '\0';
 }
